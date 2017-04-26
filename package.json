@@ -54,7 +54,7 @@
     "precommit": "npm test",
     "build": "babel src -d lib --copy-files",
     "toc": "markdown-toc -i README.md",
-    "postinstall": "npm run build && pkg-ok",
+    "postinstall": "mv src lib",
     "prepublish": "npm run build && pkg-ok"
   },
   "repository": {
