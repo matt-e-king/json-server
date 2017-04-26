@@ -11,7 +11,7 @@ const nested = require('./nested')
 const singular = require('./singular')
 const mixins = require('../mixins')
 
-module.exports = (source) => {
+module.exports = (source, opts) => {
   // Create router
   const router = express.Router()
 
@@ -38,6 +38,7 @@ module.exports = (source) => {
 
   // Expose database
   router.db = db
+  router.db._.id = opts.id || 'id'
 
   // Expose render
   router.render = (req, res) => {
